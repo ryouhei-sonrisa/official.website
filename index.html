@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萩原 涼平｜あなたの「良心」を、社会を照らす力に変える。</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-mist: #f4f2f0; /* 霧がかった空気 */
+            --bg-warm: #fcfaf8; /* 部屋のぬくもり */
+            --text-main: #333631; /* 深い森の影 */
+            --text-sub: #6b7068; 
+            --accent-wood: #a67c52; /* 木の温もり */
+            --accent-glow: #e9d5c3; /* ステンドグラスの透過光 */
+            --primary-forest: #4a5d4e; /* 静かな決意 */
+            --spacing-lg: 120px;
+            --spacing-md: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-mist);
+            color: var(--text-main);
+            /* フィードバック反映：行間を2.0、字間を0.08emに広げ、読ませるリズムを調整 */
+            line-height: 2.0;
+            letter-spacing: 0.08em;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .mincho {
+            font-family: 'Shippori Mincho', serif;
+            font-weight: 600;
+            /* フィードバック反映：見出しの字間をさらに広げ、知的な佇まいに */
+            letter-spacing: 0.12em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /* フィードバック反映：彩度を抑え、静寂と光を感じさせる霧の風景画像へ */
+            background: linear-gradient(rgba(244, 242, 240, 0.5), rgba(244, 242, 240, 0.7)),
+                        url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2560&auto=format&fit=crop') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s forwards ease-out 0.5s;
+        }
+
+        .hero-main-copy {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .hero-sub-copy {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-profile {
+            font-size: 1rem;
+            border-top: 1px solid var(--accent-glow);
+            padding-top: 1.5rem;
+            display: inline-block;
+        }
+
+        /* --- Common Sections --- */
+        section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--accent-wood);
+            margin: 20px auto 0;
+        }
+
+        /* --- Introduction --- */
+        .intro {
+            background-color: var(--bg-warm);
+        }
+
+        .intro-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            position: relative;
+            background: linear-gradient(to right, rgba(233, 213, 195, 0.5), rgba(252, 250, 248, 0.2));
+            padding: 50px 60px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px -10px rgba(166, 124, 82, 0.15);
+            border-left: none;
+        }
+
+        .highlight-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent-wood);
+            border-radius: 4px 0 0 4px;
+            box-shadow: 3px 0 15px rgba(166, 124, 82, 0.4);
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 2.2; /* フィードバック反映：さらにゆとりを持たせた行間 */
+            font-weight: 500;
+            font-family: 'Shippori Mincho', serif;
+            color: #5a4a3a;
+        }
+
+        /* --- Transformations --- */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .card h3 {
+            color: var(--primary-forest);
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        /* --- Profile --- */
+        .profile {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .profile-image {
+            flex: 1;
+            filter: grayscale(0.3) contrast(0.9); /* 彩度を抑え、より静寂な印象に */
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+        }
+
+        .profile-content {
+            flex: 1.5;
+        }
+
+        /* --- Price Menu --- */
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .menu-table th, .menu-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .price-label {
+            font-weight: bold;
+            color: var(--accent-wood);
+        }
+
+        /* --- Footer / CTA --- */
+        .cta {
+            background-color: var(--primary-forest);
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .btn-wrapper {
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--accent-wood);
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-radius: 1px;
+            font-family: 'Shippori Mincho', serif;
+            letter-spacing: 0.1em;
+        }
+
+        .btn:hover {
+            background: #8e6844;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #fff;
+            margin-left: 20px;
+        }
+
+        /* フィードバック反映：ボタン直下に添える安心感のためのマイクロコピー */
+        .micro-copy {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-main-copy { font-size: 1.8rem; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .profile { flex-direction: column; }
+            section { padding: 60px 0; }
+            .btn-outline { margin-left: 0; margin-top: 25px; }
+            .highlight-box { padding: 30px 25px; }
+            .highlight-box p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content container">
+            <h1 class="hero-main-copy">あなたの「良心」を、<br>社会を照らす力に変える。</h1>
+            <p class="hero-sub-copy">
+                「見て見ぬふりができない」あなたが、独りで抱え込まずに関わり続けられるように。<br>
+                優しさが燃え尽きにならず、誰かの明日を動かす一歩になるために。
+            </p>
+            <div class="hero-profile">
+                <p><strong>萩原 涼平</strong> | Hagiwara Ryohei</p>
+                <p style="font-size: 0.85rem; color: var(--text-sub);">NPO法人ソンリッサ 代表理事 ／ 産業カウンセラー</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <h2 class="section-title">孤独の質を変える</h2>
+            <div class="intro-text">
+                <p>孤立・孤独を「自己責任」という言葉で片づけてしまうとき、社会の温度は静かに下がっていきます。<br>
+                頼り方がわからず、言葉にできないまま、目を合わせずに過ぎていく日々。そんな空気が広がる地域や組織は、どこか息苦しく、そこにいる人たちの心を摩耗させます。</p>
+                
+                <div class="highlight-box">
+                    <p>
+                        本当は多くの人が知っています。「つらい人に声をかけたい」「少しでも心が軽くなる関わりをしたい」。<br>
+                        その「良心」こそが、豊かなつながりを取り戻す唯一の鍵であることを。
+                    </p>
+                </div>
+
+                <p style="margin-top: 30px;">
+                    僕は、あなたの小さな一歩が、誰かの勇気に変わる瞬間を何度も目の前で見てきました。<br>
+                    あなたの優しさが、自己満足や自己犠牲で終わらないために。僕は、あなたと一緒に立ち止まり、一緒に進みます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">こんな方のための場所です</h2>
+            <div class="grid-4">
+                <div class="card">
+                    <h3>若手社会人・支援職</h3>
+                    <p>現場の理想と現実に揺れ、関係性の構築に難しさを感じている方へ。</p>
+                </div>
+                <div class="card">
+                    <h3>リーダー・経営者</h3>
+                    <p>組織を良くしたいが、一人で責任を抱え込み、孤独を感じている方へ。</p>
+                </div>
+                <div class="card">
+                    <h3>地域の実踐者</h3>
+                    <p>孤独の現場に関わりたいが、どう距離を詰め、一歩を踏み出すべきか悩んでいる方へ。</p>
+                </div>
+                <div class="card">
+                    <h3>自分らしくありたい人</h3>
+                    <p>自分の感受性や優しさを、無理なく届く形に整えたい方へ。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #f0edea;">
+        <div class="container">
+            <h2 class="section-title">伴走で起こる「4つの変容」</h2>
+            <div class="grid-4">
+                <div>
+                    <h3 class="mincho">1. 「言葉以前の違和感」を大切にする</h3>
+                    <p>日常では捨てられてしまう「モヤモヤ」を急いで片付けず、そのまま受け止めます。心が緩むことで、あなたの「本当の願い」が見えてきます。</p>
+                </div>
+                <div>
+                    <h3 class="mincho">2. 「反応」から「保持（ホールド）」へ</h3>
+                    <p>出来事に振り回されて疲弊する状態から、一度立ち止まり、揺れや迷いを抱えたまま土台を整えられるようになります。</p>
+                </div>
+                <div>
+                    <h3 class="mincho">3. 視点の切り替えと「意味づけ」</h3>
+                    <p>対話を通じて、一人では辿り着けなかった角度から現状を捉え直します。「どこにエネルギーが湧くのか」に気づくことで、可能性が広がります。</p>
+                </div>
+                <div>
+                    <h3 class="mincho">4. 周囲へのポジティブな波及</h3>
+                    <p>自分の感情を認め、しなやかになることで、周囲の人が関わりやすくなる「余白」が生まれます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container profile">
+            <div class="profile-image">
+                <img src="https://images.unsplash.com/photo-1518128958364-65859d70aa41?q=80&w=1200&auto=format&fit=crop" alt="静かな光のイメージ">
+            </div>
+            <div class="profile-content">
+                <h2 class="mincho" style="font-size: 1.8rem; margin-bottom: 1.5rem;">「祖母の孤独」から始まった、僕の旅。</h2>
+                <p>僕の原点は、大好きだった祖母の孤独でした。活動を始めた当初は理想ばかりが先行し「頭の中の正解」を他人に押し付けようとしていました。半年で500人以上の高齢者のもとを訪ね、現場から学び直しました。</p>
+                <p style="margin-top: 15px;">僕自身も葛藤し、揺れながら歩んできたからこそ、綺麗ごとではない現場の苦しさや、人の心の機微に、誰よりも誠実に向き合いたいと考えています。</p>
+                
+                <div style="margin-top: 30px; font-size: 0.9rem; color: var(--text-sub);">
+                    <p><strong>実績：</strong>内閣府「孤独・孤立対策」好事例選出、ぐんま地域づくりAWARD 大賞 他</p>
+                    <p><strong>資格：</strong>産業カウンセラー、米国CTI（Co-Active Coaching）修了</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">メニュー・料金</h2>
+            <h3 class="mincho">個人向け：伴走セッション</h3>
+            <table class="menu-table">
+                <tr>
+                    <td>無料事前面談（30分）</td>
+                    <td class="price-label">0円</td>
+                </tr>
+                <tr>
+                    <td>お試し体験セッション（60分）</td>
+                    <td class="price-label">5,500円</td>
+                </tr>
+                <tr>
+                    <td>導入セッション（90分）</td>
+                    <td class="price-label">16,500円</td>
+                </tr>
+                <tr>
+                    <td>継続セッション（60分）</td>
+                    <td class="price-label">11,000円</td>
+                </tr>
+            </table>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-sub);">※月2回×6回以上の継続を推奨しています。</p>
+            
+            <h3 class="mincho" style="margin-top: 60px;">団体向け（NPO・自治体・企業）</h3>
+            <p style="margin-top: 10px;">代表者伴走、チーム対話文化の設計、対人支援研修、講演依頼など。内容に応じて個別にお見積りいたします。</p>
+        </div>
+    </section>
+
+    <section style="background-color: var(--bg-mist); text-align: center; font-style: italic;">
+        <div class="container">
+            <p class="mincho" style="font-size: 1.4rem; color: var(--primary-forest);">
+                「立派であること」より「誠実であること」を。<br>
+                あなたの優しさが、あなた自身を壊さないように。
+            </p>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="mincho">いま、あなたは——<br>誰のために、何をひとりで抱えていますか？</h2>
+            
+            <div class="btn-wrapper">
+                <a href="#" class="btn">まずは30分、話してみる（無料面談）</a>
+                <span class="micro-copy">「うまく話せない」ままでも大丈夫です。その手前から一緒に始めましょう。</span>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <a href="#" class="btn btn-outline">講演・研修のご相談はこちら</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 0; text-align: center; font-size: 0.8rem; color: var(--text-sub);">
+        &copy; Ryohei Hagiwara. All Rights Reserved.
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .intro-text, .section-title, .grid-4 > div').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
