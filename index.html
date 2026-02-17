@@ -121,7 +121,7 @@
         }
 
         @media (max-width: 768px) {
-            nav { display: none; } /* シンプル化のためモバイルでは非表示、必要ならハンバーガーメニュー化 */
+            nav { display: none; }
         }
 
         /* --- Hero Section --- */
@@ -144,7 +144,7 @@
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 24px;
-            white-space: pre-line; /* 改行を反映 */
+            white-space: pre-line;
         }
 
         .hero p {
@@ -194,7 +194,7 @@
         }
 
         .letter-container {
-            max-width: 720px; /* 読みやすい幅 */
+            max-width: 720px;
             margin: 0 auto;
         }
 
@@ -227,45 +227,95 @@
             color: var(--color-text-main);
         }
 
-        /* --- Authority (Why Me) --- */
+        /* --- Authority (Message & Profile) --- */
         .authority {
             padding: var(--spacing-section) 0;
             background-color: var(--color-bg);
         }
 
-        .authority-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .authority-message {
+            max-width: 800px;
+            margin: 0 auto 80px;
         }
 
-        .authority-text h3 {
-            font-size: 1.5rem;
+        .authority-message h3 {
+            font-size: 1.8rem;
+            margin-bottom: 32px;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        .authority-message p {
+            text-align: left;
+            line-height: 2;
+        }
+
+        /* プロフィールカードスタイル */
+        .profile-card {
+            background: #fff;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .profile-header {
+            margin-bottom: 40px;
+        }
+
+        .profile-name {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-family: var(--font-mincho);
+        }
+
+        .profile-role {
+            font-size: 0.9rem;
+            color: var(--color-text-sub);
             margin-bottom: 24px;
         }
 
-        .achievement-list {
-            list-style: none;
-            margin-top: 30px;
+        .profile-bio {
+            text-align: justify;
+            margin-bottom: 40px;
         }
 
-        .achievement-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            font-size: 0.9rem;
+        .profile-details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
         
-        .achievement-title {
+        .profile-sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .profile-section-title {
+            font-size: 1.1rem;
+            border-left: 3px solid var(--color-accent);
+            padding-left: 12px;
+            margin-bottom: 16px;
             font-weight: bold;
-            display: block;
+        }
+
+        .profile-list-item {
             margin-bottom: 8px;
-            color: var(--color-accent);
+            font-size: 0.95rem;
+        }
+        
+        .profile-ul {
+            list-style: disc;
+            margin-left: 20px;
+            font-size: 0.95rem;
         }
 
         @media (max-width: 768px) {
-            .authority-grid { grid-template-columns: 1fr; }
+            .authority-message h3 { font-size: 1.4rem; }
+            .profile-card { padding: 30px; }
         }
+
 
         /* --- Stance (4 Promises) --- */
         .stance {
@@ -509,29 +559,53 @@
     </section>
 
     <section id="authority" class="authority">
-        <div class="container authority-grid">
-            <div class="authority-text">
+        <div class="container">
+            
+            <div class="authority-message">
                 <h3>きれいごとでは進まない現場を知っているから、<br>等身大のあなたを支えたい。</h3>
-                <p>単に話を聞くだけなら、僕でなくてもいいかもしれません。 僕があなたのお役に立てるのは、「想いを、現実の形にする（実装する）」難しさを知っているからです。</p>
-                <br>
-                <p>NPO法人ソンリッサの代表として、行政や企業と連携し、多くの壁にぶつかってきました。 理想と現実のギャップ。人間関係の摩擦。孤独感。 それらを乗り越え、形にしてきた経験があるからこそ、精神論ではない、「具体的で、現実に即した」伴走ができます。</p>
+                <p>
+                    単に話を聞くだけなら、僕でなくてもいいかもしれません。 僕があなたのお役に立てるのは、「想いを、現実の形にする（実装する）」難しさを知っているからです。<br><br>
+                    NPO法人ソンリッサの代表として、行政や企業と連携し、多くの壁にぶつかってきました。 理想と現実のギャップ。人間関係の摩擦。孤独感。 それらを乗り越え、形にしてきた経験があるからこそ、精神論ではない、「具体的で、現実に即した」伴走ができます。
+                </p>
             </div>
-            <div class="authority-list">
-                <span class="achievement-title">【主な実績・受賞歴】</span>
-                <ul class="achievement-list">
-                    <li>内閣府「孤独・孤立対策に資する官民・民民連携による特色ある取組」好事例選出</li>
-                    <li>群馬県 ぐんま地域づくりAWARD 大賞</li>
-                    <li>群馬県 孤立孤独対策プラットフォーム 幹事団体</li>
-                    <li>NHK「おはよう日本」、テレビ東京「全力イノベーターズ」他多数出演</li>
-                    <li>読売新聞、朝日新聞、毎日新聞など掲載多数</li>
-                </ul>
-                <br>
-                <span class="achievement-title">【資格・学習】</span>
-                <ul class="achievement-list">
-                    <li>産業カウンセラー</li>
-                    <li>米国CTI（Co-Active Coaching）基礎・応用コース修了</li>
-                </ul>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-name">萩原 涼平（Ryohei Hagiwara）</div>
+                    <div class="profile-role">NPO法人ソンリッサ 代表理事 ／ 社会起業家 ／ 伴走支援パートナー</div>
+                    <div class="profile-bio">
+                        1994年生まれ（想定）。「高齢者の孤立・孤独を、笑顔に変える」をミッションに、2017年にNPO法人ソンリッサを設立。<br>
+                        自身の原体験に基づき、制度の狭間で孤立する高齢者に寄り添う事業を展開。若者が孫のように高齢者を支える「まごマネージャー」の育成や、独居高齢者向け見守りサービス「Tayory」など、多世代が支え合う地域コミュニティモデルを構築・実装する。<br>
+                        内閣府の孤独・孤立対策事例への選出や、群馬県との協働事業など、現場の声に基づく政策提言も積極的に行い、次世代のリーダーとして注目を集める。
+                    </div>
+                </div>
+
+                <div class="profile-details-grid">
+                    <div>
+                        <div class="profile-section-title">■ 主な受賞歴・選出</div>
+                        <div class="profile-list-item"><strong>国内・世界での評価：</strong> Yunus&Youth Social Business Design Contest 優勝、Global Social Business Summit（パリ）登壇</div>
+                        <div class="profile-list-item"><strong>県での評価：</strong> ぐんま地域づくりAWARD 大賞、群馬イノベーションアワード「スタートアップ部門」入賞</div>
+                        <div class="profile-list-item"><strong>公的選出：</strong> 内閣府「孤独・孤立対策に資する官民・民民連携による特色ある取組」好事例</div>
+                    </div>
+
+                    <div class="profile-sub-grid">
+                        <div>
+                            <div class="profile-section-title">■ 資格・スキル</div>
+                            <ul class="profile-ul">
+                                <li>産業カウンセラー</li>
+                                <li>米国CTI認定 Co-Active Coaching 基礎・応用コース修了</li>
+                                <li>自治体・官民連携・協議会等の委員歴任</li>
+                                <li>福祉・地域政策系大学 非常勤講師</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="profile-section-title">■ メディア掲載</div>
+                            <div class="profile-list-item">NHK「おはよう日本」、テレビ東京「全力イノベーターズ」、朝日新聞、読売新聞 他多数</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -671,7 +745,7 @@
     <footer id="contact">
         <div class="container">
             <h2>ひとりで抱えず、<br>少しだけ荷物を下ろしてみませんか。</h2>
-            <p>僕も、たくさんに人に支えられて、今ここにいます。<br>弱いままでいい。不器用でいい。<br>あなたのその「優しさ」を大切にするために、僕を使ってみてください。</p>
+            <p>僕も、たくさんに人に支えられて、今ここにいます。<br>弱いままでいい。不器用でいい。<br>あなたのその「優しさ」を大切にするために、僕と対話させてください。</p>
             
             <div class="footer-cta">
                 <a href="#" class="btn btn-footer">無料事前面談に申し込む</a>
