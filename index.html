@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>萩原涼平 | 伴走支援 - あなたらしい一歩を共に</title>
-    <meta name="description" content="現場の板挟みや孤独のなかで戦うあなたへ。綺麗事では進まない現実を共に紐解き、次の一歩を踏み出すための伴走支援です。">
+    <meta name="description" content="現場の板挟みや孤独のなかで戦うあなたへ。今の現実と未来のギャップを紐解き、推進力に変えるための伴走支援です。">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,12 +25,14 @@
             
             --font-heading: 'Shippori Mincho', serif;
             --font-body: 'Noto Sans JP', sans-serif;
+            --header-height: 70px;
         }
 
         /* =========================================
            Base Styles & Reset
         ========================================= */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
         
         body {
             font-family: var(--font-body);
@@ -65,6 +67,14 @@
             margin-bottom: 48px;
             color: var(--color-accent);
         }
+        .section-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin-top: -40px;
+            margin-bottom: 48px;
+            letter-spacing: 0.1em;
+        }
 
         .btn {
             display: inline-block;
@@ -76,11 +86,54 @@
             font-weight: 500;
             text-align: center;
             box-shadow: 0 4px 15px rgba(196, 122, 93, 0.3);
+            transition: all 0.3s ease;
         }
         .btn:hover {
             background-color: var(--color-accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(196, 122, 93, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(196, 122, 93, 0.4);
+        }
+
+        /* =========================================
+           Header (Fixed Navigation)
+        ========================================= */
+        .global-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: rgba(252, 250, 246, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            transition: 0.3s;
+        }
+        .header-logo {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+        .header-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+        .header-nav a {
+            color: var(--color-text-main);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .header-nav a:hover { color: var(--color-accent); }
+        
+        @media (max-width: 768px) {
+            .global-header { padding: 0 20px; }
+            .header-nav { display: none; } /* スマホでは簡易的に非表示、必要に応じてハンバーガー実装 */
         }
 
         /* =========================================
@@ -88,53 +141,87 @@
         ========================================= */
         .hero {
             position: relative;
-            padding: 120px 20px 100px;
+            padding: calc(120px + var(--header-height)) 20px 100px;
             text-align: center;
             background: linear-gradient(135deg, #F4EFEA 0%, #FCFAF6 100%);
         }
-        .hero h1 { font-size: 36px; margin-bottom: 24px; color: var(--color-text-main); }
+        .hero h1 { font-size: 36px; margin-bottom: 24px; color: var(--color-text-main); line-height: 1.6; }
         .hero p { font-size: 18px; color: var(--color-text-light); margin-bottom: 40px; line-height: 2.2; }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 26px; }
+            .hero h1 { font-size: 24px; }
             .hero p { font-size: 15px; }
         }
 
         /* =========================================
-           Intro Section 
+           1. 顧客の痛み (Pain Points)
         ========================================= */
-        .intro-box {
+        .target { background-color: var(--color-section-bg); }
+        .pain-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .pain-card {
+            background: #fff;
+            padding: 24px 32px;
+            border-radius: 8px;
+            border-left: 6px solid var(--color-secondary);
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+        .pain-card:hover { transform: translateY(-3px); }
+
+        /* =========================================
+           2. 未来の姿・メッセージ (Benefit & Message)
+        ========================================= */
+        .message-box {
             background-color: #fff;
             padding: 50px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-top: -40px;
-            position: relative;
-            z-index: 10;
+            border: 1px solid #E5E0DA;
         }
-        .intro-box p { margin-bottom: 24px; }
-        @media (max-width: 768px) { .intro-box { padding: 30px 20px; } }
-
-        /* =========================================
-           Target Section 
-        ========================================= */
-        .target { background-color: var(--color-section-bg); }
-        .target ul { list-style: none; }
-        .target li {
-            background: #fff;
-            margin-bottom: 16px;
-            padding: 20px 24px;
-            border-radius: 8px;
-            border-left: 6px solid var(--color-secondary);
+        .message-box p { margin-bottom: 24px; }
+        
+        /* アコーディオン実装 */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease;
+            opacity: 0;
+        }
+        .accordion-content.open {
+            max-height: 1000px; /* 十分な高さを確保 */
+            opacity: 1;
+        }
+        .accordion-toggle {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--color-accent);
+            cursor: pointer;
             font-weight: 500;
+            background: none;
+            border: none;
+            font-size: 16px;
+            width: 100%;
         }
+        .accordion-toggle::after {
+            content: " ▼";
+            font-size: 12px;
+        }
+        .accordion-toggle.open::after { content: " ▲"; }
+        @media (max-width: 768px) { .message-box { padding: 30px 20px; } }
 
         /* =========================================
-           Why Me Section 
+           3. 理由・実績 (Logic / Profile / Service)
         ========================================= */
         .reason-card {
             margin-bottom: 40px;
             padding-bottom: 40px;
             border-bottom: 1px solid #E5E0DA;
+            transition: all 0.3s ease;
         }
         .reason-card:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .reason-card h3 {
@@ -151,10 +238,7 @@
             font-family: var(--font-body);
         }
 
-        /* =========================================
-           Service Section 
-        ========================================= */
-        .service-steps { margin-top: 40px; }
+        /* サービス内容 */
         .step {
             background: #fff;
             padding: 30px;
@@ -162,6 +246,11 @@
             margin-bottom: 24px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid #E5E0DA;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
         }
         .step h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-accent); }
         .step span {
@@ -176,6 +265,30 @@
         }
 
         /* =========================================
+           4. ユーザーの声 (Voice - Placeholder)
+        ========================================= */
+        .voice-section { background-color: #fff; }
+        .voice-card {
+            background: var(--color-section-bg);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .voice-card::before {
+            content: "“";
+            font-family: var(--font-heading);
+            font-size: 60px;
+            color: #DCD6CF;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        .voice-text { position: relative; z-index: 1; font-style: italic; }
+        .voice-name { text-align: right; margin-top: 16px; font-size: 14px; font-weight: 500; color: var(--color-text-light); }
+
+        /* =========================================
            FAQ Section
         ========================================= */
         .faq-item {
@@ -186,84 +299,39 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid #E5E0DA;
         }
-        .faq-q {
-            color: var(--color-accent);
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-        .faq-a {
-            color: var(--color-text-main);
-        }
+        .faq-q { color: var(--color-accent); font-size: 18px; margin-bottom: 12px; }
+        .faq-a { color: var(--color-text-main); }
 
         /* =========================================
            Profile Section
         ========================================= */
         .profile { background-color: var(--color-section-bg); }
-        .profile-flex {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-        }
+        .profile-flex { display: flex; gap: 40px; align-items: flex-start; }
         .profile-img {
-            flex: 0 0 250px;
-            height: 250px;
-            background-color: #DCD6CF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 14px;
+            flex: 0 0 250px; height: 250px;
+            background-color: #DCD6CF; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 14px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
+        .profile-img:hover { transform: scale(1.05); }
         .profile-text h3 { font-size: 24px; margin-bottom: 8px; }
         .profile-text p.title { color: var(--color-accent); font-weight: 500; margin-bottom: 24px; }
+        .profile-desc { font-size: 15px; line-height: 2.0; margin-bottom: 32px; }
         
-        .profile-desc {
-            font-size: 15px;
-            line-height: 2.0;
-            margin-bottom: 32px;
-        }
-        
-        /* プロフィール内のリスト装飾 */
         .profile-lists h4 {
-            font-size: 16px;
-            color: var(--color-secondary);
-            margin-top: 24px;
-            margin-bottom: 8px;
-            border-bottom: 1px solid #DCD6CF;
-            padding-bottom: 4px;
+            font-size: 16px; color: var(--color-secondary);
+            margin-top: 24px; margin-bottom: 8px; border-bottom: 1px solid #DCD6CF; padding-bottom: 4px;
             display: inline-block;
         }
-        .profile-lists ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 16px;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-        .profile-lists li {
-            margin-bottom: 6px;
-            padding-left: 1em;
-            text-indent: -1em;
-        }
-        .profile-lists li::before {
-            content: "・";
-            color: var(--color-accent);
-        }
-        .profile-lists p {
-            font-size: 14px;
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
+        .profile-lists ul { list-style: none; padding-left: 0; margin-bottom: 16px; font-size: 14px; line-height: 1.8; }
+        .profile-lists li { margin-bottom: 6px; padding-left: 1em; text-indent: -1em; }
+        .profile-lists li::before { content: "・"; color: var(--color-accent); }
+        
         .book-info {
-            background: #fff;
-            padding: 16px 20px;
-            border-radius: 8px;
-            font-size: 14px;
-            border-left: 4px solid var(--color-accent);
-            line-height: 1.6;
-            margin-top: 32px;
+            background: #fff; padding: 16px 20px; border-radius: 8px; font-size: 14px;
+            border-left: 4px solid var(--color-accent); line-height: 1.6; margin-top: 32px;
         }
 
         @media (max-width: 768px) {
@@ -273,7 +341,7 @@
         }
 
         /* =========================================
-           Footer
+           Footer & Modals
         ========================================= */
         footer {
             background-color: var(--color-text-main);
@@ -282,67 +350,126 @@
             padding: 40px 20px;
             font-size: 14px;
         }
+        .footer-links {
+            margin-bottom: 16px;
+        }
+        .footer-links a {
+            color: #DCD6CF;
+            margin: 0 12px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .footer-links a:hover { color: #fff; }
+
+        /* モーダルウィンドウ */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(3px);
+            z-index: 2000; display: none; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        
+        .modal-content {
+            background: #fff; width: 90%; max-width: 600px;
+            max-height: 80vh; overflow-y: auto;
+            padding: 40px; border-radius: 12px; position: relative;
+            transform: translateY(20px); transition: transform 0.3s ease;
+            color: var(--color-text-main); text-align: left;
+        }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        
+        .modal-close {
+            position: absolute; top: 16px; right: 24px;
+            font-size: 28px; cursor: pointer; color: #999; border: none; background: none;
+        }
+        .modal-close:hover { color: var(--color-text-main); }
+        .modal-content h2 { font-size: 22px; margin-bottom: 24px; color: var(--color-accent); border-bottom: 1px solid #E5E0DA; padding-bottom: 8px;}
+        .modal-content p { font-size: 14px; line-height: 1.8; margin-bottom: 16px; }
+
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <h1>あなたの「弱さ」も「迷い」も、<br>抱えたままでいい。<br>あなたらしい一歩を、ここから共に。</h1>
-            <p>「もっと良くしたい」と願いながら、<br>現場の板挟みや孤独のなかで戦うあなたへ。<br>綺麗事では進まない現実を共に紐解き、<br>次の一歩を踏み出すための「伴走支援」です。</p>
-            <a href="#contact" class="btn">無料事前面談（30分）に申し込む</a>
-            <p style="font-size: 13px; margin-top: 16px; color: var(--color-text-light);">※うまく話せなくても、まとまっていなくても大丈夫です。</p>
-        </div>
+    <header class="global-header">
+        <div class="header-logo">萩原 涼平 | 伴走支援</div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#pain">こんな悩みはありませんか</a></li>
+                <li><a href="#message">私の思い</a></li>
+                <li><a href="#logic">選ばれる理由</a></li>
+                <li><a href="#service">サービス内容</a></li>
+                <li><a href="#profile">プロフィール</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="intro" style="padding-top: 0;">
+    <section class="hero">
         <div class="container">
-            <div class="intro-box">
-                <p><strong>「見て見ぬふりをしたくない」と、今日も現場で戦うあなたへ。</strong></p>
-                <p>挑戦しようとすればするほど、周囲との温度差を感じる。頑張るほどに壁にぶつかり、「自分には向いていないのでは」と立ち止まりそうになる夜があるかもしれません。</p>
-                <p>私自身も、何度も葛藤し、もがいてきました。<br>しかしその度に、表面的な言葉ではなく、一緒に泥臭く悩み、本気で信じてくれる人たちの存在に救われ、一歩を踏み出してきました。</p>
-                <p>だからこそ、今度は私が、同じように戦っているあなたの隣にいたいと思っています。</p>
-                <p>私は、きれいごとだけでは進まない「現場のリアル」を知っています。<br>だからこそ、あなたの言葉にならない苦しさや悔しさを、まずはそのまま受け止めます。その上で、あなたが本当に大切にしたい願いを一緒に整理し、震えながらでも踏み出す一歩を、全力で応援します。</p>
+            <h1>「正解」のない現場で、<br>板挟みになっているあなたへ。</h1>
+            <p>今の現実と、本当にたどり着きたい未来。<br>その間にある「ギャップ」を紐解き、<br>次の一歩の推進力に変える伴走支援。</p>
+            <a href="#service" class="btn">無料事前面談（30分）に申し込む</a>
+            <p style="font-size: 13px; margin-top: 16px; color: var(--color-text-light);">※うまく話せなくても、まとまっていなくても大丈夫です。</p>
+        </div>
+    </section>
+
+    <section id="pain" class="target">
+        <div class="container">
+            <h2 class="section-title">こんな想いを抱え込んでいませんか？</h2>
+            <p class="section-subtitle">PAIN POINTS</p>
+            <div class="pain-cards">
+                <div class="pain-card">「現場のリアルを知らない上層部」と「疲弊するスタッフ」の間で、毎日クッション役になり、自分の感情を押し殺している。</div>
+                <div class="pain-card">誰かのためにと今の仕事に就いたはずが、日々の業務に追われ、「本当はこうしたかったんだっけ？」と自分の軸が見えなくなっている。</div>
+                <div class="pain-card">リーダーとして「弱音を吐いてはいけない」と気を張るあまり、誰にも本音を相談できず、一人で正解のない問いを抱え込んでいる。</div>
+                <div class="pain-card">一般的なビジネスコーチングの「キラキラした目標設定」には、どこか白々しさや違和感を覚えてしまう。</div>
             </div>
         </div>
     </section>
 
-    <section class="target">
+    <section id="message">
         <div class="container">
-            <h2 class="section-title">こんな想いを抱えていませんか？</h2>
-            <ul>
-                <li>現場や組織を良くしたいが、上司や周囲との板挟みになって疲弊している</li>
-                <li>支援職やリーダーとして人のために動いているが、自分の悩みを打ち明ける場所がない</li>
-                <li>やりたいことや自分の軸がブレてしまい、どう頑張ればいいか分からなくなっている</li>
-                <li>一般的なビジネスコーチングの「キラキラした目標設定」には違和感がある</li>
-            </ul>
+            <h2 class="section-title">矛盾と葛藤は、前に進むためのエネルギーになる。</h2>
+            <p class="section-subtitle">MY MESSAGE</p>
+            <div class="message-box">
+                <p><strong>「見て見ぬふりをしたくない」と、今日も現場で戦うあなたへ。</strong></p>
+                <p>挑戦しようとすればするほど、周囲との温度差を感じる。頑張るほどに壁にぶつかり、「自分には向いていないのでは」と立ち止まりそうになる夜があるかもしれません。</p>
+                
+                <div class="accordion-content" id="more-message">
+                    <p>私自身も、NPO法人の立ち上げから現在に至るまで、数え切れないほどの「板挟み」と「理想と現実のギャップ」に苦しみ、もがいてきました。しかしその度に、表面的な慰めの言葉ではなく、一緒に泥臭く悩み、構造を紐解いてくれる人たちの存在に救われてきました。</p>
+                    <p>私は、きれいごとだけでは進まない「現場のリアル」を知っています。<br>だからこそ、あなたの言葉にならない苦しさや悔しさを、まずはそのまま受け止めます。</p>
+                    <p>今の現実から目を背けず、本当に大切にしたい願い（ビジョン）を一緒に整理する。その間にあるギャップは、決してあなたを苦しめるものではなく、あなたを次なる行動へ突き動かす「推進力（エネルギー）」へと変わります。震えながらでも踏み出す一歩を、全力で伴走します。</p>
+                </div>
+                <button class="accordion-toggle" onclick="toggleAccordion()">私の思いをもっと読む</button>
+            </div>
         </div>
     </section>
 
-    <section id="reasons">
+    <section id="logic" class="target">
         <div class="container">
             <h2 class="section-title">静かだけれど熱い。<br>等身大のあなたを支える3つの理由</h2>
+            <p class="section-subtitle">WHY CHOOSE ME</p>
             
             <div class="reason-card">
                 <h3><span>01</span>綺麗事では終わらせない「泥臭い現場力」</h3>
-                <p>NPO法人の代表理事として、これまで1,000人以上の若者や支援者と直接対話してきました。現場で起きるリアルな葛藤や理不尽さを肌で知っているからこそ、机上の空論や理想論を押し付けることはありません。</p>
+                <p>これまで1,000人以上の若者や支援者と直接対話してきました。現場で起きるリアルな葛藤や理不尽さを肌で知っているからこそ、独自の視点で現状を俯瞰しつつも、机上の空論や理想論を押し付けることはありません。</p>
             </div>
             
             <div class="reason-card">
-                <h3><span>02</span>「聴く」プロフェッショナルとしての専門性</h3>
-                <p>産業カウンセラーとしての専門的な傾聴スキルと、CTIジャパン（リーダーシッププログラム）等で培った確かなベースを持っています。ただ共感するだけでなく、あなたの思考と感情をゆっくりと整理整頓し、次のステップに向かいやすくします。</p>
+                <h3><span>02</span>「知性」と「聴く力」を掛け合わせた専門性</h3>
+                <p>産業カウンセラーとしての専門的な傾聴スキルと、CTIジャパン等で培った確かなベースを持っています。ただ共感して終わるのではなく、あなたの思考と感情の構造を論理的に整理整頓し、次のステップに向かいやすくします。</p>
             </div>
 
             <div class="reason-card">
                 <h3><span>03</span>評価判断をしない、絶対的な安心の場</h3>
-                <p>私はあなたを評価・ジャッジしません。あなたの「弱さ」を隠すべきものではなく、前に進むための「原動力」として捉え、共にあり続けます。</p>
+                <p>私はあなたを評価・ジャッジしません。一般的な枠にはまらないあなたの「弱さ」や「迷い」を隠すべきものではなく、前に進むための大切なパーツとして捉え、共にあり続けます。</p>
             </div>
         </div>
     </section>
 
-    <section id="service" style="background-color: var(--color-section-bg);">
+    <section id="service">
         <div class="container">
             <h2 class="section-title">ご提供する「伴走支援」について</h2>
+            <p class="section-subtitle">SERVICE & FLOW</p>
             <p style="text-align: center; margin-bottom: 40px;">対話を通じて現状のモヤモヤを整理し、あなたが本当に望む方向へ進むための継続的なサポートを行います。「答え」を与えるのではなく、あなたの中にある「願い」を引き出し、行動へのハードルを一緒に下げていく時間です。</p>
             
             <div class="service-steps">
@@ -368,8 +495,25 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 40px;" id="contact">
+            <div style="text-align: center; margin-top: 40px;">
                 <a href="#" class="btn">まずは無料事前面談を予約する</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="voice" class="voice-section target">
+        <div class="container">
+            <h2 class="section-title">伴走支援を受けられた方の声</h2>
+            <p class="section-subtitle">USER VOICE</p>
+            
+            <div class="voice-card">
+                <p class="voice-text">「自分の中でバラバラになっていた感情や思考が、萩原さんとの対話を通じて一つの線に繋がる感覚がありました。ただ話を聞いてくれるだけでなく、客観的な視点で構造を整理してくれたことで、次の一歩が明確になりました。」</p>
+                <p class="voice-name">（30代・NPO法人スタッフ）</p>
+            </div>
+            
+            <div class="voice-card">
+                <p class="voice-text">「上司と部下の板挟みで、自分がどうしたいのかすら分からなくなっていました。キラキラした目標を強要されることなく、私の泥臭い現状をそのまま受け止めてくれたことで、本当に肩の荷が下りました。」</p>
+                <p class="voice-name">（40代・福祉施設 管理職）</p>
             </div>
         </div>
     </section>
@@ -377,6 +521,7 @@
     <section id="faq">
         <div class="container">
             <h2 class="section-title">よくある質問</h2>
+            <p class="section-subtitle">FAQ</p>
             <div class="faq-list">
                 <div class="faq-item">
                     <h4 class="faq-q">Q. 本当に何を話せばいいかわかりません。それでも大丈夫ですか？</h4>
@@ -390,10 +535,6 @@
                     <h4 class="faq-q">Q. お試し体験のあとに断っても大丈夫ですか？</h4>
                     <p class="faq-a">A. もちろん大丈夫です。伴走支援は相性が非常に大切ですので、合わないと感じたら遠慮なくおっしゃってください。</p>
                 </div>
-                <div class="faq-item">
-                    <h4 class="faq-q">Q. 対面は可能ですか？</h4>
-                    <p class="faq-a">A. 基本はオンラインですが、場所・日程によっては対面も可能です（要相談）。</p>
-                </div>
             </div>
         </div>
     </section>
@@ -401,6 +542,7 @@
     <section id="profile" class="profile">
         <div class="container">
             <h2 class="section-title">プロフィール</h2>
+            <p class="section-subtitle">PROFILE</p>
             <div class="profile-flex">
                 <div class="profile-img">
                     写真スペース<br>（笑顔の写真推奨）
@@ -411,8 +553,8 @@
                     
                     <p class="profile-desc">
                         1994年生まれ。「高齢者の孤立・孤独を、笑顔に変える」をミッションに、2017年にNPO法人ソンリッサを設立。<br>
-                        自身の原体験に基づき、制度の狭間で孤立する高齢者に寄り添う事業を展開。若者が孫のように高齢者を支える「まごマネージャー」の育成や、独居高齢者向け見守りサービス「Tayory」など、多世代が支え合う地域コミュニティモデルを構築・実装する。<br>
-                        内閣府の孤独・孤立対策事例への選出や、群馬県との協働事業など、現場の声に基づく政策提言も積極的に行い、次世代のリーダーとして注目を集める。
+                        これらの実績は、決して有能さの証明ではなく、現場の課題に対し泥臭く壁にぶつかりながらも、なんとか構造を変えようともがいてきた足跡です。<br>
+                        内閣府の孤独・孤立対策事例への選出など評価をいただく裏側には、常に葛藤と孤独がありました。だからこそ、現場で孤軍奮闘するあなたの痛みを深く理解し、現実を変えるための知恵とエネルギーを共に紡ぎ出せると信じています。
                     </p>
 
                     <div class="profile-lists">
@@ -430,9 +572,6 @@
                             <li>自治体・官民連携・協議会等の委員歴任</li>
                             <li>福祉・地域政策系大学 非常勤講師</li>
                         </ul>
-
-                        <h4>■ メディア掲載</h4>
-                        <p>NHK「おはよう日本」、テレビ東京「全力イノベーターズ」、朝日新聞、読売新聞 他多数</p>
                     </div>
 
                     <div class="book-info">
@@ -446,9 +585,74 @@
 
     <footer>
         <div class="container">
+            <div class="footer-links">
+                <a onclick="openModal('modal-tokushoho')">特定商取引法に基づく表記</a>
+                <a onclick="openModal('modal-privacy')">プライバシーポリシー</a>
+            </div>
             <p>&copy; 2026 Ryohei Hagiwara. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <div id="modal-tokushoho" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-tokushoho')">&times;</button>
+            <h2>特定商取引法に基づく表記</h2>
+            <p><strong>事業者名：</strong>萩原 涼平</p>
+            <p><strong>所在地：</strong>ご請求時に遅滞なく開示いたします。</p>
+            <p><strong>連絡先：</strong>ご請求時に遅滞なく開示いたします。</p>
+            <p><strong>提供価格：</strong>各サービスの案内ページ（STEP一覧）をご参照ください。</p>
+            <p><strong>お支払い方法：</strong>クレジットカード、銀行振込</p>
+            <p><strong>キャンセルポリシー：</strong>面談前日の18時までにご連絡いただいた場合、キャンセル料は発生いたしません。</p>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-privacy')">&times;</button>
+            <h2>プライバシーポリシー</h2>
+            <p>当サービスでは、お客様の個人情報を適切に管理し、以下の目的以外には使用いたしません。</p>
+            <p>1. 伴走支援サービスの提供およびご連絡のため<br>
+               2. お問い合わせへの対応のため<br>
+               3. サービスの改善に関するご案内のため</p>
+            <p>取得した個人情報は、法令に基づく場合を除き、ご本人の同意なく第三者に提供することはありません。</p>
+        </div>
+    </div>
+
+    <script>
+        // アコーディオンの制御（もっと見る）
+        function toggleAccordion() {
+            const content = document.getElementById('more-message');
+            const btn = document.querySelector('.accordion-toggle');
+            
+            content.classList.toggle('open');
+            btn.classList.toggle('open');
+            
+            if (content.classList.contains('open')) {
+                btn.textContent = '閉じる';
+            } else {
+                btn.textContent = '私の思いをもっと読む';
+            }
+        }
+
+        // モーダルウィンドウの制御
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden'; // 背景のスクロールを止める
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // モーダルの背景クリックで閉じる処理
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
