@@ -22,7 +22,7 @@ const cards = [
 
 export default function Target() {
   return (
-    <section id="target" className="bg-[#EFF2F8] px-8 py-[100px]">
+    <section id="target" className="bg-[#EFF2F8] px-5 md:px-8 py-16 md:py-[100px]">
       <div className="mx-auto max-w-[1080px]">
         {/* Section Header */}
         <div className="mb-14 text-center">
@@ -39,14 +39,14 @@ export default function Target() {
           {cards.map((card, i) => (
             <motion.div
               key={card.num}
-              className="relative overflow-hidden rounded-2xl bg-white px-12 py-10 shadow-[0_2px_12px_rgba(44,74,110,0.06)]"
+              className="relative overflow-hidden rounded-2xl bg-white px-6 py-8 md:px-12 md:py-10 shadow-[0_2px_12px_rgba(44,74,110,0.06)]"
               initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, margin: "-30px" }}
             >
               {/* Watermark number */}
-              <span className="pointer-events-none absolute right-8 top-4 select-none font-[family-name:var(--font-inter)] text-[6rem] font-bold leading-none text-[rgba(44,74,110,0.08)]">
+              <span className="pointer-events-none absolute right-4 md:right-8 top-4 select-none font-[family-name:var(--font-inter)] text-[4rem] md:text-[6rem] font-bold leading-none text-[rgba(44,74,110,0.08)]">
                 {card.num}
               </span>
 

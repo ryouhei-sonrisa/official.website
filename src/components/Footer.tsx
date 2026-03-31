@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#F8F9FC] border-t border-[rgba(44,74,110,0.06)] py-12 px-8 text-center">
+    <footer className="bg-[#F8F9FC] border-t border-[rgba(44,74,110,0.06)] py-12 px-5 md:px-8 text-center">
       <p className="font-[family-name:var(--font-inter)] text-[0.85rem] font-medium tracking-[0.2em]">
         JUNTO
       </p>
       <p className="text-[0.7rem] text-[#777] mt-1 mb-4">
         スペイン語で「ともに」
       </p>
-      <div className="flex justify-center gap-6 mb-4">
+      <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 mb-4">
         <a
           href="https://sonrisa.or.jp"
           target="_blank"

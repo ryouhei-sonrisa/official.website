@@ -26,8 +26,8 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center text-center overflow-hidden"
-      style={{ padding: "140px 32px 80px" }}
+      className="relative min-h-screen flex items-center justify-center text-center overflow-hidden px-5 md:px-8"
+      style={{ paddingTop: "120px", paddingBottom: "80px" }}
     >
       {/* Abstract Lines Background */}
       <svg
@@ -66,7 +66,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-[640px] mx-auto">
         <motion.h1
-          className="font-[family-name:var(--font-shippori)] font-bold text-[2.4rem] leading-[2] tracking-[0.06em] text-[#2C4A6E]"
+          className="font-[family-name:var(--font-shippori)] font-bold text-[1.6rem] md:text-[2.4rem] leading-[1.8] md:leading-[2] tracking-[0.06em] text-[#2C4A6E]"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -118,7 +118,7 @@ export default function Hero() {
 
         {/* Buttons */}
         <motion.div
-          className="mt-9 flex gap-3 justify-center"
+          className="mt-9 flex flex-col sm:flex-row gap-3 justify-center"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -126,13 +126,13 @@ export default function Hero() {
         >
           <a
             href="#menu"
-            className="bg-[#2C4A6E] text-white px-[30px] py-[15px] rounded-xl shadow-[0_4px_16px_rgba(44,74,110,0.25)] hover:bg-[#1E3A5C] hover:-translate-y-0.5 transition"
+            className="bg-[#2C4A6E] text-white px-[30px] py-[15px] rounded-xl shadow-[0_4px_16px_rgba(44,74,110,0.25)] hover:bg-[#1E3A5C] hover:-translate-y-0.5 transition text-center text-[0.9rem]"
           >
             伴走支援について →
           </a>
           <a
             href="#message"
-            className="bg-white text-[#444] border border-[rgba(44,74,110,0.15)] px-[30px] py-[15px] rounded-xl hover:border-[#2C4A6E] hover:text-[#2C4A6E] hover:-translate-y-0.5 transition"
+            className="bg-white text-[#444] border border-[rgba(44,74,110,0.15)] px-[30px] py-[15px] rounded-xl hover:border-[#2C4A6E] hover:text-[#2C4A6E] hover:-translate-y-0.5 transition text-center text-[0.9rem]"
           >
             メッセージを読む
           </a>

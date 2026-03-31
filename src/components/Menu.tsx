@@ -59,7 +59,7 @@ const corporateItems = [
 
 export default function Menu() {
   return (
-    <section id="menu" className="bg-white py-[100px] px-8">
+    <section id="menu" className="bg-white py-16 md:py-[100px] px-5 md:px-8">
       <div className="max-w-[1080px] mx-auto">
         {/* Section Header */}
         <motion.div
@@ -72,7 +72,7 @@ export default function Menu() {
           <p className="font-[family-name:var(--font-inter)] text-xs font-medium tracking-[0.15em] uppercase text-[#5A7FA3] mb-3">
             Menu
           </p>
-          <h2 className="font-[family-name:var(--font-shippori)] text-[1.7rem] font-semibold text-[#1A1A1A] mb-4">
+          <h2 className="font-[family-name:var(--font-shippori)] text-[1.3rem] md:text-[1.7rem] font-semibold text-[#1A1A1A] mb-4">
             まずはお互いを知ることから
           </h2>
           <p className="text-[0.88rem] leading-[1.9] text-[#555] max-w-[520px] mx-auto">
@@ -81,7 +81,7 @@ export default function Menu() {
         </motion.div>
 
         {/* 4-column Pricing Table */}
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.step}

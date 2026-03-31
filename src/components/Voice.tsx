@@ -19,7 +19,7 @@ const voices = [
 
 export default function Voice() {
   return (
-    <section id="voice" className="bg-[#E6EBF4] px-8 py-[100px]">
+    <section id="voice" className="bg-[#E6EBF4] px-5 md:px-8 py-16 md:py-[100px]">
       <div className="text-center mb-14">
         <span className="font-[family-name:var(--font-inter)] text-xs font-medium tracking-[0.15em] uppercase text-[#5A7FA3]">
           Voice
@@ -29,7 +29,7 @@ export default function Voice() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 max-w-[1080px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1080px] mx-auto">
         {voices.map((v, i) => (
           <motion.div
             key={i}
@@ -37,9 +37,9 @@ export default function Voice() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: i * 0.15 }}
-            className="bg-white rounded-2xl p-10 shadow-[0_2px_12px_rgba(44,74,110,0.06)] border-l-[3px] border-[#2C4A6E] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(44,74,110,0.12)] transition"
+            className="bg-white rounded-2xl p-7 md:p-10 shadow-[0_2px_12px_rgba(44,74,110,0.06)] border-l-[3px] border-[#2C4A6E] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(44,74,110,0.12)] transition"
           >
-            <p className="font-[family-name:var(--font-shippori)] text-[1.3rem] text-[#2C4A6E] mb-1">
+            <p className="font-[family-name:var(--font-shippori)] text-[1.1rem] md:text-[1.3rem] text-[#2C4A6E] mb-1">
               <span className="border-b-2 border-[rgba(44,74,110,0.2)] pb-0.5 inline">
                 {v.key}
               </span>

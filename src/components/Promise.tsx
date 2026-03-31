@@ -35,7 +35,7 @@ const cards = [
 
 export default function Promise() {
   return (
-    <section id="promise" className="bg-[#F8F9FC] py-[100px] px-8">
+    <section id="promise" className="bg-[#F8F9FC] py-16 md:py-[100px] px-5 md:px-8">
       <div className="max-w-[1080px] mx-auto">
         {/* Section Header */}
         <motion.div
@@ -48,7 +48,7 @@ export default function Promise() {
           <p className="font-[family-name:var(--font-inter)] text-xs font-medium tracking-[0.15em] uppercase text-[#5A7FA3] mb-3">
             Promise
           </p>
-          <h2 className="font-[family-name:var(--font-shippori)] text-[1.5rem] font-semibold leading-[1.9] tracking-[0.04em] text-center">
+          <h2 className="font-[family-name:var(--font-shippori)] text-[1.2rem] md:text-[1.5rem] font-semibold leading-[1.9] tracking-[0.04em] text-center whitespace-pre-line">
             {"無理に「答え」を出さなくていい。\nまずは、そこにある違和感から。"}
           </h2>
           <p className="text-[0.9rem] text-[#444] mt-2.5 leading-[1.9] text-center">
@@ -57,11 +57,11 @@ export default function Promise() {
         </motion.div>
 
         {/* 2x2 Grid */}
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {cards.map((card, index) => (
             <motion.div
               key={card.number}
-              className="bg-white rounded-2xl px-9 py-10 shadow-[0_2px_12px_rgba(44,74,110,0.06)] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(44,74,110,0.1)] transition-all duration-300"
+              className="bg-white rounded-2xl px-6 py-8 md:px-9 md:py-10 shadow-[0_2px_12px_rgba(44,74,110,0.06)] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(44,74,110,0.1)] transition-all duration-300"
               style={{
                 borderTop: "3px solid",
                 borderImage:

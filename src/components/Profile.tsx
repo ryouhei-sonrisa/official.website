@@ -26,7 +26,7 @@ const media = [
 
 export default function Profile() {
   return (
-    <section id="profile" className="bg-[#F8F9FC] py-[100px] px-8">
+    <section id="profile" className="bg-[#F8F9FC] py-16 md:py-[100px] px-5 md:px-8">
       <div className="max-w-[1080px] mx-auto">
         {/* Section Header */}
         <motion.div
@@ -39,28 +39,28 @@ export default function Profile() {
           <p className="font-[family-name:var(--font-inter)] text-xs font-medium tracking-[0.15em] uppercase text-[#5A7FA3] mb-3">
             Profile
           </p>
-          <h2 className="font-[family-name:var(--font-shippori)] text-[1.5rem] font-semibold leading-[1.9] tracking-[0.04em]">
+          <h2 className="font-[family-name:var(--font-shippori)] text-[1.2rem] md:text-[1.5rem] font-semibold leading-[1.9] tracking-[0.04em]">
             きれいごとでは進まない現場を知っているから、
-            <br />
+            <br className="hidden md:block" />
             等身大のあなたを支えられる。
           </h2>
         </motion.div>
 
         {/* Main Profile Card */}
         <motion.div
-          className="bg-white rounded-2xl p-12 shadow-[0_2px_12px_rgba(44,74,110,0.06)] mb-8"
+          className="bg-white rounded-2xl p-7 md:p-12 shadow-[0_2px_12px_rgba(44,74,110,0.06)] mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="grid grid-cols-[280px_1fr] gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 md:gap-12">
             {/* Left: Photo & Name */}
             <div>
               <img
                 src="/official.website/profile.jpg"
                 alt="萩原涼平"
-                className="w-full aspect-[3/4] rounded-xl object-cover object-top"
+                className="w-[200px] md:w-full mx-auto aspect-[3/4] rounded-xl object-cover object-top"
               />
               <div className="mt-5 text-center">
                 <h3 className="font-[family-name:var(--font-shippori)] text-[1.3rem] font-semibold text-[#2C4A6E]">
@@ -100,7 +100,7 @@ export default function Profile() {
         </motion.div>
 
         {/* 3-Column Detail Cards */}
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {/* Awards */}
           <motion.div
             className="bg-white rounded-2xl px-8 py-9 shadow-[0_2px_12px_rgba(44,74,110,0.06)]"
