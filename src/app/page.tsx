@@ -4,6 +4,7 @@ import Message from "@/components/Message";
 import Promise from "@/components/Promise";
 import Target from "@/components/Target";
 import Menu from "@/components/Menu";
+import Profile from "@/components/Profile";
 import Voice from "@/components/Voice";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
         <Promise />
         <Target />
         <Menu />
+        <Profile />
         <Voice />
         <CTA />
       </main>
