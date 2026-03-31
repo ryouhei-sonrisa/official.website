@@ -57,10 +57,11 @@ export default function Profile() {
           <div className="grid grid-cols-[280px_1fr] gap-12">
             {/* Left: Photo & Name */}
             <div>
-              {/* Photo placeholder */}
-              <div className="w-full aspect-[3/4] rounded-xl bg-[#E6EBF4] flex items-center justify-center">
-                <span className="text-[#5A7FA3] text-[0.8rem]">Photo</span>
-              </div>
+              <img
+                src="/official.website/profile.jpg"
+                alt="萩原涼平"
+                className="w-full aspect-[3/4] rounded-xl object-cover object-top"
+              />
               <div className="mt-5 text-center">
                 <h3 className="font-[family-name:var(--font-shippori)] text-[1.3rem] font-semibold text-[#2C4A6E]">
                   萩原 涼平
