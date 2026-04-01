@@ -1,5 +1,10 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー | JUNTO",
+};
 
 const sections = [
   {
@@ -65,13 +70,13 @@ export default function Privacy() {
       <header className="border-b border-[rgba(44,74,110,0.06)] px-5 md:px-8 py-4">
         <div className="max-w-[800px] mx-auto flex items-center justify-between">
           <Link
-            href="/official.website"
+            href="/"
             className="font-[family-name:var(--font-inter)] text-[1.05rem] font-medium tracking-[0.2em] text-[#222] no-underline"
           >
             JUNTO
           </Link>
           <Link
-            href="/official.website"
+            href="/"
             className="text-[0.82rem] text-[#5A7FA3] hover:text-[#2C4A6E] transition no-underline"
           >
             トップに戻る

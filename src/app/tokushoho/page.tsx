@@ -1,5 +1,10 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "特定商取引法に基づく表記 | JUNTO",
+};
 
 const rows = [
   {
@@ -59,6 +64,10 @@ const rows = [
       "Zoom等のビデオ通話ツールが利用できるPC・スマートフォン・タブレット。安定したインターネット環境を推奨します。",
   },
   {
+    label: "お申し込み方法",
+    value: "当サイトのお申し込みフォーム（Googleフォーム）よりお申し込みください。",
+  },
+  {
     label: "クーリングオフについて",
     value: "通信販売に該当するため、クーリングオフ制度は適用されません。キャンセル・返金については上記をご確認ください。",
   },
@@ -71,13 +80,13 @@ export default function Tokushoho() {
       <header className="border-b border-[rgba(44,74,110,0.06)] px-5 md:px-8 py-4">
         <div className="max-w-[800px] mx-auto flex items-center justify-between">
           <Link
-            href="/official.website"
+            href="/"
             className="font-[family-name:var(--font-inter)] text-[1.05rem] font-medium tracking-[0.2em] text-[#222] no-underline"
           >
             JUNTO
           </Link>
           <Link
-            href="/official.website"
+            href="/"
             className="text-[0.82rem] text-[#5A7FA3] hover:text-[#2C4A6E] transition no-underline"
           >
             トップに戻る

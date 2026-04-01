@@ -92,7 +92,7 @@ export default function Profile() {
               {/* Quote */}
               <div className="bg-[#EFF2F8] border-l-[3px] border-[#2C4A6E] rounded-r-lg p-6 mt-2">
                 <p className="font-[family-name:var(--font-shippori)] text-[0.92rem] leading-[2.1] text-[#222] tracking-[0.03em]">
-                  単に話を聞くだけなら、僕でなくてもいいかもしれません。僕があなたのお役に立てるのは、「想いを、現実の形にする」難しさと痛みを、誰よりも知っているからです。
+                  単に話を聞くだけなら、私でなくてもいいかもしれません。私があなたのお役に立てるのは、「想いを、現実の形にする」難しさと痛みを、誰よりも知っているからです。
                 </p>
               </div>
             </div>

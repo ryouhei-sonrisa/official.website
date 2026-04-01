@@ -55,7 +55,7 @@ export default function Message() {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, margin: "-40px" }}
             >
-              より良い社会や未来を願うほど、周囲との温度差に孤独を感じたり、頑張るほどに「自分は力不足ではないか」と葛藤が深まることもあるでしょう。僕もそうでした。
+              より良い社会や未来を願うほど、周囲との温度差に孤独を感じたり、頑張るほどに「自分は力不足ではないか」と葛藤が深まることもあるでしょう。私もそうでした。
             </motion.p>
             <motion.div
               className="bg-white border border-[rgba(44,74,110,0.08)] rounded-lg p-5 md:p-6 mt-3 mb-5"

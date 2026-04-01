@@ -8,7 +8,7 @@ const plans = [
     duration: "30min",
     price: "¥0",
     description:
-      "まずは相性と方向性の確認を行います。僕の雰囲気を確認するだけの時間でも構いません。",
+      "まずは相性と方向性の確認を行います。私の雰囲気を確認するだけの時間でも構いません。",
     recommended: true,
     cta: "無料面談を予約",
     href: "https://forms.gle/LPaBEpPTGZg4k4Lq7",
@@ -21,7 +21,7 @@ const plans = [
     description:
       "実際の対話を体験していただきます。継続するかどうかは、体験後にゆっくりご判断ください。",
     recommended: false,
-    cta: "詳しく見る",
+    cta: "お問い合わせ",
     href: "#contact",
     external: false,
   },
@@ -32,7 +32,7 @@ const plans = [
     description:
       "あなたの歩みや背景をじっくり共有し、伴走の「ゴール」と「現在地」を深く掘り下げます。",
     recommended: false,
-    cta: "詳しく見る",
+    cta: "お問い合わせ",
     href: "#contact",
     external: false,
   },
@@ -44,7 +44,7 @@ const plans = [
       "定期的な対話を通じて、あなたの歩みを支え続けます。",
     note: "※6回以上の継続を推奨",
     recommended: false,
-    cta: "詳しく見る",
+    cta: "お問い合わせ",
     href: "#contact",
     external: false,
   },
