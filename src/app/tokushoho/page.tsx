@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const rows = [
   {
@@ -11,11 +12,11 @@ const rows = [
   },
   {
     label: "所在地",
-    value: "群馬県前橋市千代田町二丁目12-7 前橋プラザ元気21・3階 前橋市市民活動支援センター内",
+    value: "群馬県前橋市茂木町270番地71",
   },
   {
     label: "連絡先",
-    value: "お問い合わせはGoogleフォームよりお願いいたします。メールでのご連絡をご希望の場合は、フォーム送信後にご案内いたします。",
+    value: "電話番号：請求があった場合には遅滞なく開示いたします。\nメールアドレス：info@sonrisa-npo.com\nお問い合わせはGoogleフォームからも受け付けております。",
   },
   {
     label: "サービス名",
@@ -56,6 +57,10 @@ const rows = [
     label: "動作環境",
     value:
       "Zoom等のビデオ通話ツールが利用できるPC・スマートフォン・タブレット。安定したインターネット環境を推奨します。",
+  },
+  {
+    label: "クーリングオフについて",
+    value: "通信販売に該当するため、クーリングオフ制度は適用されません。キャンセル・返金については上記をご確認ください。",
   },
 ];
 
@@ -113,6 +118,7 @@ export default function Tokushoho() {
           最終更新日：2026年4月1日
         </p>
       </main>
+      <Footer />
     </div>
   );
 }

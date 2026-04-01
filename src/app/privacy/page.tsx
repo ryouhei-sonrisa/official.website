@@ -1,6 +1,15 @@
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const sections = [
+  {
+    number: "",
+    title: "JUNTOサービスにおける個人情報の利用について",
+    items: [
+      "お申し込み時にご提供いただくお名前・メールアドレス等は、面談の日程調整、サービスのご案内、ご連絡のために利用いたします。",
+      "サービス改善を目的とした統計的な分析に利用する場合がありますが、個人を特定できない形で処理いたします。",
+    ],
+  },
   {
     number: "1",
     title: "個人情報の取得",
@@ -84,15 +93,17 @@ export default function Privacy() {
         </p>
 
         <div className="space-y-8">
-          {sections.map((section) => (
+          {sections.map((section, idx) => (
             <div
-              key={section.number}
+              key={section.number || `section-${idx}`}
               className="bg-white rounded-2xl px-6 md:px-8 py-7 md:py-8 shadow-[0_2px_12px_rgba(44,74,110,0.06)]"
             >
               <div className="flex items-baseline gap-3 mb-4">
-                <span className="font-[family-name:var(--font-inter)] text-[1.4rem] font-semibold text-[#2C4A6E]">
-                  {section.number}
-                </span>
+                {section.number && (
+                  <span className="font-[family-name:var(--font-inter)] text-[1.4rem] font-semibold text-[#2C4A6E]">
+                    {section.number}
+                  </span>
+                )}
                 <h2 className="font-[family-name:var(--font-shippori)] text-[1.05rem] font-semibold">
                   {section.title}
                 </h2>
@@ -123,6 +134,7 @@ export default function Privacy() {
           </p>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

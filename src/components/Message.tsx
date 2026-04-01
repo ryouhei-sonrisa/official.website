@@ -58,14 +58,28 @@ export default function Message() {
               より良い社会や未来を願うほど、周囲との温度差に孤独を感じたり、頑張るほどに「自分は力不足ではないか」と葛藤が深まることもあるでしょう。僕もそうでした。
             </motion.p>
             <motion.div
+              className="bg-white border border-[rgba(44,74,110,0.08)] rounded-lg p-5 md:p-6 mt-3 mb-5"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-40px" }}
+            >
+              <p className="font-[family-name:var(--font-shippori)] text-[0.82rem] font-semibold text-[#2C4A6E] mb-2">
+                伴走支援とは？
+              </p>
+              <p className="text-[13px] md:text-[14px] leading-[2] text-[#444]">
+                カウンセリングのように「治す」ことが目的ではなく、コンサルティングのように「答えを提供する」ものでもありません。あなたの隣を歩きながら、対話を通じて一緒に考え、あなた自身の力で前に進む道を見つけていく支援のかたちです。
+              </p>
+            </motion.div>
+            <motion.div
               className="bg-[#EFF2F8] border-l-[3px] border-[#2C4A6E] rounded-r-lg p-5 md:p-8 mt-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
               viewport={{ once: true, margin: "-40px" }}
             >
               <p className="font-[family-name:var(--font-shippori)] text-[14px] md:text-[15px] leading-[2.1] text-[#222] tracking-[0.03em]">
-                伴走とは、僕が正解を教えることではありません。あなたの隣に座り、同じ景色を見つめ、絡まった糸を一緒にほどきながら、あなた自身が「これでいいんだ」と思える納得解を見つけていくプロセスです。
+                伴走とは、私が正解を差し出すことではありません。あなたの隣に座り、同じ景色を見つめながら、絡まった糸をひとつずつ丁寧にほどいていく。その中で、あなた自身が「これでいいんだ」と心から思える納得解を、一緒に見つけていくプロセスです。
               </p>
             </motion.div>
           </motion.div>

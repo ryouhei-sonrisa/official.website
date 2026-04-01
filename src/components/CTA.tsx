@@ -24,6 +24,7 @@ export default function CTA() {
         <a
           href="https://forms.gle/LPaBEpPTGZg4k4Lq7"
           target="_blank"
+          rel="noopener noreferrer"
           className="w-full bg-[#2C4A6E] text-white text-center py-[18px] rounded-xl text-[0.95rem] font-medium shadow-[0_4px_16px_rgba(44,74,110,0.25)] hover:bg-[#1E3A5C] transition block"
         >
           無料事前面談に申し込む →

@@ -107,7 +107,7 @@ export default function Hero() {
           animate="visible"
           custom={3}
         >
-          <div className="w-[42px] h-[42px] rounded-full bg-[#E6EBF4]" />
+          <img src="/official.website/profile.jpg" alt="萩原涼平" className="w-[42px] h-[42px] rounded-full object-cover object-top" />
           <div className="text-left">
             <p className="font-bold text-[#2C4A6E]">萩原 涼平</p>
             <p className="text-[#777] text-[0.75rem]">

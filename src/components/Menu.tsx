@@ -120,6 +120,9 @@ export default function Menu() {
               <p className="font-[family-name:var(--font-inter)] text-[1.8rem] font-semibold text-[#2C4A6E] mb-3">
                 {plan.price}
               </p>
+              {plan.price !== "¥0" && (
+                <p className="font-[family-name:var(--font-inter)] text-[0.7rem] text-[#777] -mt-2 mb-3">税込</p>
+              )}
 
               {/* Description */}
               <p className="text-[0.84rem] leading-[1.9] text-[#444] flex-1">

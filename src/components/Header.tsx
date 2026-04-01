@@ -7,6 +7,7 @@ const navItems = [
   { label: "大切にしていること", href: "#promise" },
   { label: "こんな方へ", href: "#target" },
   { label: "サービス", href: "#menu" },
+  { label: "プロフィール", href: "#profile" },
   { label: "お客様の声", href: "#voice" },
 ];
 
