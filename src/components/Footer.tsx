@@ -9,20 +9,20 @@ export default function Footer() {
       </p>
       <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 mb-4">
         <a
-          href="https://sonrisa.or.jp"
+          href="https://sonrisa-npo.com/"
           target="_blank"
           className="text-[0.72rem] text-[#777] hover:text-[#2C4A6E] transition"
         >
           NPO法人ソンリッサ
         </a>
         <a
-          href="#"
+          href="/official.website/tokushoho"
           className="text-[0.72rem] text-[#777] hover:text-[#2C4A6E] transition"
         >
           特定商取引法に基づく表記
         </a>
         <a
-          href="#"
+          href="/official.website/privacy"
           className="text-[0.72rem] text-[#777] hover:text-[#2C4A6E] transition"
         >
           プライバシーポリシー
